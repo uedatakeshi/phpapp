@@ -55,3 +55,20 @@ if (is_production()) {
 }
 $monolog = new \Monolog\Logger('admin', $monolog_handlers);
 logger($monolog);
+
+Twig_Autoloader::register();
+$loader = new Twig_Loader_Filesystem(__DIR__ . '/../../../twig/templates');
+if (is_production()) {
+	$option = array(
+		'cache' => __DIR__ . '/../../../twig/compilation_cache',
+		//'cache' => false,
+		'auto_reload' => true,
+		'debug' => false
+	);
+} else {
+	$option = array(
+		'cache' => false,
+		'debug' => true
+	);
+}
+$twig = new Twig_environment($loader, $option);

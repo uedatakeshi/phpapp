@@ -1,6 +1,11 @@
 <?php
 require_once __DIR__ . '/inc/bootstrap.php';
 logger()->debug('message', ['env' => $_ENV['MY_PHP_ENV']]);
+$template = $twig->load('admin/index.html');
+//echo $template->render(array('php_env' => $_ENV['MY_PHP_ENV']));
+$data = array('php_env' => $_ENV['MY_PHP_ENV'], 'name' => $_ENV['NAME']);
+//echo $template->render(array('php_env' => $_ENV['MY_PHP_ENV'], 'name' => $_ENV['NAME']));
+$template->display($data);
 ?>
 <!DOCTYPE html>
 <title>WEB+DB PRESS Vol.96 PHP大規模開発入門 第17回 サンプルコード</title>
