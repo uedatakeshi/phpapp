@@ -1,0 +1,23 @@
+{
+    "name": "twain/admin_app",
+    "description": "template application of php",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Takeshi Ueda",
+            "email": "uedatakeshi@gmail.com"
+        }
+    ],
+	"config": {
+		"secure-http": false
+	},
+	"autoload": {
+		"files": ["src/functions.php"]
+	},
+    "require": {
+		"vlucas/phpdotenv": "*",
+		"filp/whoops": "*",
+		"twig/twig": "*",
+        "monolog/monolog": "~1.18"
+	}
+}
