@@ -18,6 +18,7 @@
 		"vlucas/phpdotenv": "*",
 		"filp/whoops": "*",
 		"twig/twig": "*",
+		"aura/sql": "*",
         "monolog/monolog": "~1.18"
 	}
 }

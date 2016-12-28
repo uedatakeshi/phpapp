@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . '/../../../lib/vendor/autoload.php';
+use Aura\Sql\ExtendedPdo;
+use Aura\Sql\Profiler;
 
 /*
  * dotenv の設定
@@ -61,7 +63,6 @@ $loader = new Twig_Loader_Filesystem(__DIR__ . '/../../../twig/templates');
 if (is_production()) {
 	$option = array(
 		'cache' => __DIR__ . '/../../../twig/compilation_cache',
-		//'cache' => false,
 		'auto_reload' => true,
 		'debug' => false
 	);
@@ -72,3 +73,13 @@ if (is_production()) {
 	);
 }
 $twig = new Twig_environment($loader, $option);
+
+$pdo = new ExtendedPdo(
+    'mysql:host=localhost;dbname=sample_db',
+    'root',
+    'pass123',
+    array(), // driver options as key-value pairs
+    array()  // attributes as key-value pairs
+);
+$prof = new Profiler();
+$pdo->setProfiler($prof);

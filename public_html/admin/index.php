@@ -1,6 +1,30 @@
 <?php
 require_once __DIR__ . '/inc/bootstrap.php';
 logger()->debug('message', ['env' => $_ENV['MY_PHP_ENV']]);
+
+$pdo->getProfiler()->setActive(true);
+$array = array('ueda');
+$query = 'SELECT * FROM users WHERE id IN (:id)';
+$bind = [
+    'id' => [1,2]
+];
+
+// the statement to prepare
+$result = $pdo->fetchAll($query, $bind);
+
+var_dump($result);
+
+foreach ($pdo->yieldAssoc($query, $bind) as $key => $row) {
+    // ...
+	echo $key;
+	var_dump($row);
+}
+
+
+foreach ($pdo->getProfiler()->getProfiles() as $i => $profile) {
+	var_dump($profile);
+}
+
 $template = $twig->load('admin/index.html');
 //echo $template->render(array('php_env' => $_ENV['MY_PHP_ENV']));
 $data = array('php_env' => $_ENV['MY_PHP_ENV'], 'name' => $_ENV['NAME']);
