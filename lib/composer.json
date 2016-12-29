@@ -12,6 +12,7 @@
 		"secure-http": false
 	},
 	"autoload": {
+		"classmap": ["src/"],
 		"files": ["src/functions.php"]
 	},
     "require": {
