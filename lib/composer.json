@@ -3,23 +3,23 @@
     "description": "template application of php",
     "type": "library",
     "authors": [
-        {
-            "name": "Takeshi Ueda",
-            "email": "uedatakeshi@gmail.com"
-        }
+    {
+        "name": "Takeshi Ueda",
+        "email": "uedatakeshi@gmail.com"
+    }
     ],
-	"config": {
-		"secure-http": false
-	},
-	"autoload": {
-		"classmap": ["src/"],
-		"files": ["src/functions.php"]
-	},
-    "require": {
-		"vlucas/phpdotenv": "*",
-		"filp/whoops": "*",
-		"twig/twig": "*",
-		"aura/sql": "*",
-        "monolog/monolog": "~1.18"
-	}
+        "config": {
+            "secure-http": false
+        },
+        "autoload": {
+            "classmap": ["src/"],
+            "files": ["src/functions.php"]
+        },
+        "require": {
+            "vlucas/phpdotenv": "*",
+            "filp/whoops": "*",
+            "twig/twig": "*",
+            "aura/sql": "*",
+            "monolog/monolog": "~1.18"
+        }
 }
