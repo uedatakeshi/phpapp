@@ -1,6 +1,6 @@
 /tmp/*
 /log/*
-/node_modules/*
+/lib/node_modules/*
 lib/vendor/*
 
 .DS_Store

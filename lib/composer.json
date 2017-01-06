@@ -12,9 +12,7 @@
         "secure-http": false
     },
     "autoload": {
-        "psr-4": {
-            "Exam\\": "src/Exam/"
-        },
+        "classmap": ["src/"],
         "files": ["src/functions.php"]
     },
     "require": {
