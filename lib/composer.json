@@ -8,17 +8,23 @@
             "email": "uedatakeshi@gmail.com"
         }
     ],
-	"config": {
-		"secure-http": false
-	},
-	"autoload": {
-		"files": ["src/functions.php"]
-	},
+    "config": {
+        "secure-http": false
+    },
+    "autoload": {
+        "psr-4": {
+            "Exam\\": "src/Exam/"
+        },
+        "files": ["src/functions.php"]
+    },
     "require": {
-		"vlucas/phpdotenv": "*",
-		"filp/whoops": "*",
-		"twig/twig": "*",
-		"aura/sql": "*",
+        "vlucas/phpdotenv": "*",
+        "twig/twig": "*",
+        "aura/sql": "*",
         "monolog/monolog": "~1.18"
-	}
+    },
+    "require-dev": {
+        "filp/whoops": "*",
+        "phpunit/phpunit": "4.8.*"
+    }
 }

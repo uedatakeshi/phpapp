@@ -2,6 +2,9 @@
 require_once __DIR__ . '/inc/bootstrap.php';
 logger()->debug('message', ['env' => $_ENV['MY_PHP_ENV']]);
 
+$exam = new \Exam\Controller;
+$exam->start();
+
 $pdo->getProfiler()->setActive(true);
 $array = array('ueda');
 $query = 'SELECT * FROM users WHERE id IN (:id)';
@@ -19,6 +22,7 @@ foreach ($pdo->yieldAssoc($query, $bind) as $key => $row) {
 	echo $key;
 	var_dump($row);
 }
+
 
 
 foreach ($pdo->getProfiler()->getProfiles() as $i => $profile) {
