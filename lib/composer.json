@@ -3,10 +3,10 @@
     "description": "template application of php",
     "type": "library",
     "authors": [
-        {
-            "name": "Takeshi Ueda",
-            "email": "uedatakeshi@gmail.com"
-        }
+    {
+        "name": "Takeshi Ueda",
+        "email": "uedatakeshi@gmail.com"
+    }
     ],
     "config": {
         "secure-http": false

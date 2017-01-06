@@ -2,8 +2,12 @@
 require_once __DIR__ . '/inc/bootstrap.php';
 logger()->debug('message', ['env' => $_ENV['MY_PHP_ENV']]);
 
-$exam = new \Exam\Controller;
-$exam->start();
+/*
+ * 自作クラス namespace なしだとuseする必要なし
+ */
+$exam = new Exam;
+$exam->index();
+
 
 $pdo->getProfiler()->setActive(true);
 $array = array('ueda');
