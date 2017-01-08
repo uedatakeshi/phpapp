@@ -7,7 +7,11 @@ logger()->debug('message', ['env' => $_ENV['MY_PHP_ENV']]);
  */
 $form = new Form($pdo);
 //$form->index();
-$form->save();
+$data = array(
+    'name' => "wakada",
+    'yomi' => "ooooo"
+);
+var_dump($form->save($data));
 
 
 $pdo->getProfiler()->setActive(true);

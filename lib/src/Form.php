@@ -9,12 +9,15 @@ class Form
         echo "<h1>here is my form class</h1>";
     }
 
-    public function save() {
+    public function save($data) {
 
-        $name = array("wa'ka'da");
-        $stm = 'INSERT INTO users  (name) VALUES (:name)';
-        $bind_values = array('name' => $name);
-        $sth = $this->pdo->perform($stm, $bind_values);
+        $stm = 'INSERT INTO users (name, yomi) VALUES (:name, :yomi)';
+        $sth = $this->pdo->perform($stm, $data);
         echo $sth->queryString;
+        return $sth;
+        /*
+        $sth = $this->pdo->prepare($stm);
+        $sth->execute($data);
+         */
     }
 }
