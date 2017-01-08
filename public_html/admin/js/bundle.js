@@ -45,7 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var print = __webpack_require__(1);
-	print("Hello webpack");
+	print("Hello webpack!!");
 
 	var Vue = __webpack_require__(2);
 	var demo = new Vue({
@@ -54,6 +54,7 @@
 	    message: 'Hello Vue.js!'
 	  }
 	});
+
 	console.log(demo);
 
 

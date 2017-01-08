@@ -72,7 +72,7 @@ if (is_production()) {
 		'debug' => true
 	);
 }
-$twig = new Twig_environment($loader, $option);
+$twig = new Twig_Environment($loader, $option);
 
 $pdo = new ExtendedPdo(
     'mysql:host=localhost;dbname=sample_db',

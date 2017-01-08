@@ -4,6 +4,8 @@ Development template for tiny php application
 
     cd lib
     php ../composer.phar install
+    npm install
+    npm install webpack -g
 
 autoloadだけ書き換えた時は、
 
