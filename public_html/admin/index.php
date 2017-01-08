@@ -5,8 +5,9 @@ logger()->debug('message', ['env' => $_ENV['MY_PHP_ENV']]);
 /*
  * 自作クラス namespace なしだとuseする必要なし
  */
-$exam = new Exam;
-//$exam->index();
+$form = new Form($pdo);
+//$form->index();
+$form->save();
 
 
 $pdo->getProfiler()->setActive(true);
