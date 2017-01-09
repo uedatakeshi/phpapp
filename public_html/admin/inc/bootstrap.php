@@ -1,7 +1,5 @@
 <?php
 require_once __DIR__ . '/../../../lib/vendor/autoload.php';
-use Aura\Sql\ExtendedPdo;
-use Aura\Sql\Profiler;
 
 /*
  * dotenv の設定
@@ -21,8 +19,8 @@ if (file_exists(__DIR__ . '/../.env')) {
  * productionモードでは一切出さない
  */
 if (is_production()) {
-    // 全てのエラー報告をオフにする
-    error_reporting(0);
+    // エラー報告をPHP 5.3 以降のデフォルトにする
+    error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
     // エラー情報が画面に出力されないようにする
     ini_set('display_errors', '0');
 
@@ -74,12 +72,3 @@ if (is_production()) {
 }
 $twig = new Twig_Environment($loader, $option);
 
-$pdo = new ExtendedPdo(
-    'mysql:host=localhost;dbname=sample_db',
-    'root',
-    'pass123',
-    array(), // driver options as key-value pairs
-    array()  // attributes as key-value pairs
-);
-$prof = new Profiler();
-$pdo->setProfiler($prof);
