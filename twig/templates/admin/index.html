@@ -2,19 +2,28 @@
 <html>
     <head>
         {% block head %}
-            <link rel="stylesheet" href="style.css" />
-            <title>{% block title %}{% endblock %} - My Webpage</title>
+            <title>{% block title %}サンプルフォーム{% endblock %} - My Webpage</title>
         {% endblock %}
     </head>
     <body>
+<div id="demo">
+    <div>${message}</div>
+  <input v-model="message">
+</div>
+<script type="text/javascript" src="js/bundle.js" charset="utf-8"></script>
         <div id="content">{% block content %}{% endblock %}</div>
-        <div id="footer">
-            {% block footer %}
-                &copy; Copyright 2011 by <a href="http://domain.invalid/">you</a>.
-            {% endblock %}
-        </div>
-		<hr>
+        <ul id="navigation">
+        {% for user in users %}
+          <li>{{ user.username|e }}</li>
+        {% endfor %}
+        </ul>
 		<p>現在の環境意味は<code>{{ php_env }}</code>です。</p>
 		<p>現在の氏名は<code>{{ name }}</code>です。</p>
+		<hr>
+        <div id="footer">
+            {% block footer %}
+                &copy; Copyright 2017 by <a href="http://domain.invalid/">you</a>.
+            {% endblock %}
+        </div>
     </body>
 </html>

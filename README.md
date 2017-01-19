@@ -16,3 +16,4 @@ jsはlib/js/main.jsがentryでlib直下で
     webpack
 
 コマンドでビルド。
+twig との併用なので vue.js のデリミタは '${', '}' に。

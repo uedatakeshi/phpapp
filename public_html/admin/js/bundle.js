@@ -49,6 +49,7 @@
 
 	var Vue = __webpack_require__(2);
 	var demo = new Vue({
+	  delimiters: ['${', '}'],
 	  el: '#demo',
 	  data: {
 	    message: 'Hello Vue.js!'
