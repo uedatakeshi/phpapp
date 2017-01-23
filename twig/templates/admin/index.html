@@ -6,24 +6,30 @@
         {% endblock %}
     </head>
     <body>
-<div id="demo">
-    <div>${message}</div>
-  <input v-model="message">
-</div>
-<script type="text/javascript" src="js/bundle.js" charset="utf-8"></script>
+        <div id="demo">
+            <div>${message}</div>
+            <input v-model="message">
+        </div>
         <div id="content">{% block content %}{% endblock %}</div>
         <ul id="navigation">
         {% for user in users %}
-          <li>{{ user.username|e }}</li>
+          <li>{{ user.username }}</li>
         {% endfor %}
         </ul>
 		<p>現在の環境意味は<code>{{ php_env }}</code>です。</p>
 		<p>現在の氏名は<code>{{ name }}</code>です。</p>
+		<hr>
+        <div id="enqForm">
+        <label>氏名：<input  v-model="name" type="text" name="name"></label>
+
+        <button v-on:click="kakunin()">確認</button>
+        </div>
 		<hr>
         <div id="footer">
             {% block footer %}
                 &copy; Copyright 2017 by <a href="http://domain.invalid/">you</a>.
             {% endblock %}
         </div>
+        <script type="text/javascript" src="js/bundle.js" charset="utf-8"></script>
     </body>
 </html>

@@ -16,10 +16,11 @@ $data = array(
 //var_dump($form->getOne());
 
 
-print_r($form->yieldTwo());
-
-
+$data = array(
+    'users' => $form->yieldTwo(), 
+    'php_env' => $_ENV['MY_PHP_ENV'], 
+    'name' => $_ENV['NAME']
+);
 
 $template = $twig->load('admin/index.html');
-$data = array('users' => $form->yieldTwo(), 'php_env' => $_ENV['MY_PHP_ENV'], 'name' => $_ENV['NAME']);
 $template->display($data);

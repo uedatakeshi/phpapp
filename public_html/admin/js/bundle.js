@@ -56,7 +56,21 @@
 	  }
 	});
 
-	console.log(demo);
+	var enq = new Vue({
+	  delimiters: ['${', '}'],
+	  el: '#enqForm',
+	  data: {
+	    name: ''
+	  },
+	  methods: {
+	      kakunin: function(event) {
+	          alert('hello' + this.name);
+	      }
+	  }
+	});
+
+	enq.kakunin();
+	//console.log(enq);
 
 
 /***/ },
